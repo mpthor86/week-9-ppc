@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_07_171917) do
+ActiveRecord::Schema.define(version: 2021_01_07_180552) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -24,6 +24,18 @@ ActiveRecord::Schema.define(version: 2021_01_07_171917) do
     t.integer "budget"
     t.boolean "private"
     t.integer "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "parties_supplies", id: false, force: :cascade do |t|
+    t.integer "party_id", null: false
+    t.integer "supply_id", null: false
+    t.index ["party_id", "supply_id"], name: "index_parties_supplies_on_party_id_and_supply_id"
+  end
+
+  create_table "supplies", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
