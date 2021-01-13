@@ -10,11 +10,9 @@ class Party < ApplicationRecord
         self.private ? 'Private' : 'Public'
     end    
 
-
-    def something
-        #nother here
-    end
-
+    scope :order_by_name, -> { order(:name) }
+    scope :order_by_most_supplies, -> { joins(:supplies).group("parties.id").order("COUNT(*) DESC") }
+    scope :public_parties, -> { where(private: false) }
     
 
 end
