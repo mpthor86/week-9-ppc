@@ -1,5 +1,7 @@
 # Part 3 Instructions
 
+   foo bar lorem ipsum stuff
+
 - Create a Category model that just has a name attribute. Each party should belong to a category
 - Create a Supply model - each supply will have a name attribute. A party can have many supplies and each supply should be able to be used by many parties.
 - Turn the Party new form into a nested form so that you can choose from an existing category or create a new one when you create a party. 
