@@ -10,6 +10,11 @@ class Party < ApplicationRecord
         self.private ? 'Private' : 'Public'
     end    
 
+
+    def something
+        #nother here
+    end
+
     
 
 end
