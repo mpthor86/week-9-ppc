@@ -1,9 +1,14 @@
 <h1> <%= @party.name %> </h1>
 <h3> <%= @party.date %> </h3>
 <p>Budget: $<%= @party.budget %></p>
-
+<p> Category: <%= @party.category.each do |c| %></p>
+    <li> <%= c.name %> </li>
+    <% end %>
+<p> Supplies: </p>
 
 <p><i><%= @party.private? %> Party</i></p>
+
+<p>Everybody loves to party!</p>
 
 
 <%= link_to 'All Parties', parties_path %>
